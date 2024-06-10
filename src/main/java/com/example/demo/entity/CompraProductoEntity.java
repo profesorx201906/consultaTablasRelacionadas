@@ -11,17 +11,16 @@ import lombok.Setter;
 @Getter
 public class CompraProductoEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private CompraProductoPk id;
 
     @ManyToOne
-    @JoinColumn(name = "id_compra")
+    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     @JsonBackReference
     private CompraEntity compra;
 
     @ManyToOne
-    @JoinColumn(name = "id_producto")
+    @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     @JsonBackReference
     private ProductoEntity producto;
 

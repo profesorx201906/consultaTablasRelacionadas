@@ -14,6 +14,6 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     public List<ClienteEntity> findClientesByProducto(Long productoId) {
-        return clienteRepository.findDistinctByCompras_CompraProductos_Producto_Id(productoId);
+        return clienteRepository.findDistinctByCompras_CompraProductos_Producto_IdOrderByNombreDesc(productoId);
     }
 }

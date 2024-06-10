@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {
 
-    List<ClienteEntity> findDistinctByCompras_CompraProductos_Producto_Id(Long productoId);
+    List<ClienteEntity> findDistinctByCompras_CompraProductos_Producto_IdOrderByNombreDesc(Long productoId);
 }
